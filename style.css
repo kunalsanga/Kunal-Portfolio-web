@@ -1,0 +1,457 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1.5rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+nav a:hover {
+    opacity: 1;
+}
+
+.resume-btn {
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+section {
+    min-height: 100vh;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#home {
+    padding-top: 8rem;
+    text-align: center;
+}
+
+#home p {
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+    opacity: 0;
+}
+
+h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    opacity: 0;
+}
+
+#about {
+    text-align: left;
+    padding: 0 8rem;
+    align-items: center;
+    justify-content: center;
+}
+
+#about h2 {
+    font-size: 5rem;
+    margin-bottom: 3rem;
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+    opacity: 0;
+}
+
+#about p {
+    font-size: 1.25rem;
+    opacity: 0.85;
+    margin: 1rem auto;
+    line-height: 1.8;
+    text-align: center;
+    max-width: 900px;
+}
+
+.about-text {
+    text-align: center;
+    margin: 0 auto;
+}
+
+p {
+    font-size: 1.2rem;
+    opacity: 0.7;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1.8;
+}
+
+.profile {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 2rem auto;
+}
+
+.profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.interests {
+    margin-top: 3rem;
+    text-align: left;
+    width: 100%;
+    max-width: 900px;
+}
+
+.interests p {
+    font-size: 1.1rem;
+    opacity: 0.6;
+    text-align: left;
+    margin: 0.2rem 0;
+}
+
+.interests span {
+    opacity: 1;
+    color: #fff;
+    font-weight: 500;
+}
+
+.skills-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.skills-container h3 {
+    font-size: 2rem;
+    margin: 2rem 0 1.5rem;
+    text-align: center;
+}
+
+.tech-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.8rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.tech-icons img {
+    width: 75px;
+    height: 75px;
+    transition: transform 0.3s;
+    object-fit: contain;
+    padding: 12px;
+    border-radius: 12px;
+    background-color: rgba(40, 40, 40, 0.8);
+}
+
+.tech-icons img:hover {
+    transform: translateY(-5px);
+    background-color: rgba(50, 50, 50, 0.95);
+}
+
+/* Specific styling for icons that need white background */
+.tech-icons img[alt="Jupyter Notebook"],
+.tech-icons img[alt="Google Colab"],
+.tech-icons img[alt="Truffle"] {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 10px;
+}
+
+/* Specific styling for Web3.js icon */
+.tech-icons img[alt="Web3.js"] {
+    background-color: rgba(241, 104, 34, 0.95);
+    padding: 8px;
+}
+
+/* Custom colors for AI/ML tools */
+.tech-icons img[alt="spaCy"] {
+    background-color: rgba(9, 163, 213, 0.95);
+    padding: 8px;
+}
+
+.tech-icons img[alt="NLTK"] {
+    background-color: rgba(40, 40, 40, 0.8);
+    padding: 10px;
+}
+
+.tech-icons img[alt="cuDNN"] {
+    background-color: rgba(118, 185, 0, 0.95);
+    padding: 8px;
+}
+
+/* Custom color for Hardhat */
+.tech-icons img[alt="Hardhat"] {
+    background-color: rgba(253, 182, 13, 0.95);
+    padding: 10px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+    position: relative;
+    z-index: 2;
+}
+
+.social-links a {
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.7;
+    transition: all 0.3s;
+}
+
+.social-links a:hover {
+    opacity: 1;
+    transform: translateY(-3px);
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    opacity: 0.7;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding: 1.5rem 2rem;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    section {
+        padding: 2rem;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .tech-icons img {
+        width: 70px;
+        height: 70px;
+        padding: 10px;
+    }
+
+    .skills-container h3 {
+        margin: 1.5rem 0 1rem;
+    }
+    
+    .tech-icons {
+        gap: 1.2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    #about {
+        padding: 2rem;
+        align-items: center;
+    }
+    
+    #about h2 {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+}
+
+/* Add this new class for languages grid */
+.languages-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 90px);
+    grid-template-rows: repeat(2, 90px);
+    gap: 2.2rem;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 2rem auto;
+    width: 100%;
+    max-width: 600px;
+    padding: 0 1rem;
+}
+
+.languages-grid img {
+    place-self: center;
+    margin: 0 auto;
+    width: 80px;
+    height: 80px;
+    padding: 12px;
+    background: rgba(40, 40, 40, 0.8);
+}
+
+/* Update mobile view for languages grid */
+@media (max-width: 768px) {
+    .languages-grid {
+        grid-template-columns: repeat(4, 75px);
+        grid-template-rows: repeat(2, 75px);
+        gap: 1.2rem;
+        padding: 0 0.5rem;
+    }
+
+    .languages-grid img {
+        width: 70px;
+        height: 70px;
+        padding: 10px;
+    }
+}
+
+/* Add these styles to your CSS */
+#contact {
+    position: relative;
+    overflow: hidden;
+    padding: 4rem;
+    background: #000;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+    position: relative;
+    z-index: 2;
+}
+
+.social-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(40, 40, 40, 0.95);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.social-icon i {
+    font-size: 1.75rem;
+    opacity: 0.9;
+    color: #fff;
+}
+
+.social-icon:hover {
+    transform: translateY(-5px);
+    background: rgba(60, 60, 60, 0.95);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+#contact h2 {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(180deg, #fff 0%, #919191 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0px 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+/* Remove the wave background */
+.wave-bg {
+    display: none;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .social-links {
+        gap: 1.5rem;
+    }
+
+    .social-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .social-icon i {
+        font-size: 1.5rem;
+    }
+
+    #contact h2 {
+        font-size: 3.5rem;
+    }
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation classes */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h1.appear, h2.appear {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+#about h2.appear {
+    opacity: 1;
+}

@@ -11,14 +11,36 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <nav>
-        <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
-        </div>
+    <!-- Mobile Top Nav Bar -->
+    <nav class="mobile-top-nav">
+        <a href="#home">Home</a>
+        <a href="#contact">Contact</a>
+        <a href="#skills">Skills</a>
         <a href="resume.pdf" class="resume-btn">Resume</a>
+    </nav>
+    <video class="background-video" autoplay loop muted playsinline>
+        <source src="BG1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <nav>
+        <div class="nav-container">
+            <div class="nav-left">
+                <div class="nav-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            <div class="nav-right">
+                <a href="resume.pdf" class="resume-btn">Resume</a>
+            </div>
+            <button class="hamburger" aria-label="Open navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
     </nav>
 
     <main>
@@ -31,7 +53,7 @@
         <section id="about">
             <h2>About me</h2>
             <div class="profile">
-                <img src="kunal.jpg" alt="Kunal Sanga">
+                <img src="kunal.jpg" alt="Kunal Sanga" loading="lazy">
             </div>
             <p>I am a Computer Science and Engineering undergrad at SIT Sambalpur, passionate about AI/ML, Web3, and Cloud Computing. Skilled in Python, C++, JavaScript, React.js, Django, FastAPI, SQL, AWS, and Blockchain, I thrive in collaborative environments to build impactful solutions. Currently exploring LLM training and DApp development, aiming for opportunities in Machine Learning Research and Web3 Innovation.</p>
             <div class="interests">
@@ -46,72 +68,77 @@
                 <h3>Languages</h3>
                 <div class="tech-icons languages-grid">
                     <!-- Top row -->
-                    <img src="https://skillicons.dev/icons?i=js" alt="JavaScript">
-                    <img src="https://skillicons.dev/icons?i=py" alt="Python">
-                    <img src="https://skillicons.dev/icons?i=cpp" alt="C++">
-                    <img src="https://skillicons.dev/icons?i=java" alt="Java">
+                    <img src="https://skillicons.dev/icons?i=js" alt="JavaScript" loading="lazy">
+                    <img src="https://skillicons.dev/icons?i=py" alt="Python" loading="lazy">
+                    <img src="https://skillicons.dev/icons?i=cpp" alt="C++" loading="lazy">
+                    <img src="https://skillicons.dev/icons?i=java" alt="Java" loading="lazy">
                     <!-- Bottom row -->
-                    <img src="https://skillicons.dev/icons?i=c" alt="C">
-                    <img src="https://skillicons.dev/icons?i=dart" alt="Dart">
-                    <img src="https://skillicons.dev/icons?i=solidity" alt="Solidity">
-                    <img src="https://skillicons.dev/icons?i=mysql" alt="SQL">
+                    <img src="https://skillicons.dev/icons?i=c" alt="C" loading="lazy">
+                    <img src="https://skillicons.dev/icons?i=dart" alt="Dart" loading="lazy">
+                    <img src="https://skillicons.dev/icons?i=solidity" alt="Solidity" loading="lazy">
+                    <img src="https://www.svgrepo.com/show/331760/sql-database-generic.svg" alt="SQL Database" width="40" height="40" loading="lazy">
                 </div>
 
                 <h3>Libraries and frameworks</h3>
                 <div class="tech-icons">
-                    <img src="https://skillicons.dev/icons?i=react" alt="React">
-                    <img src="https://skillicons.dev/icons?i=nextjs" alt="Next.js">
-                    <img src="https://skillicons.dev/icons?i=tailwind" alt="Tailwind">
-                    <img src="https://skillicons.dev/icons?i=bootstrap" alt="Bootstrap">
+                    <img src="https://skillicons.dev/icons?i=react" alt="React" loading="lazy">
+                    <img src="https://skillicons.dev/icons?i=nextjs" alt="Next.js" loading="lazy">
+                    <img src="https://skillicons.dev/icons?i=tailwind" alt="Tailwind" loading="lazy">
+                    <img src="https://skillicons.dev/icons?i=bootstrap" alt="Bootstrap" loading="lazy">
                 </div>
 
                 <h3>AI/ML Libraries</h3>
                 <div class="tech-icons">
-                    <img src="https://skillicons.dev/icons?i=tensorflow" alt="TensorFlow">
-                    <img src="https://skillicons.dev/icons?i=pytorch" alt="PyTorch">
-                    <img src="https://skillicons.dev/icons?i=opencv" alt="OpenCV">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/keras/keras-original.svg" alt="Keras">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Matplotlib_icon.svg" alt="Matplotlib">
-                    <img src="https://cdn.jsdelivr.net/gh/explosion/spaCy/website/src/images/icon.png" alt="spaCy">
-                    <img src="https://skillicons.dev/icons?i=py" alt="NLTK">
-                    <img src="https://raw.githubusercontent.com/valohai/ml-logos/master/cuda.svg" alt="cuDNN">
+                    <img src="https://skillicons.dev/icons?i=tensorflow" alt="TensorFlow" loading="lazy">
+                    <img src="https://skillicons.dev/icons?i=pytorch" alt="PyTorch" loading="lazy">
+                    <img src="https://skillicons.dev/icons?i=opencv" alt="OpenCV" loading="lazy">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy" loading="lazy">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" loading="lazy">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/keras/keras-original.svg" alt="Keras" loading="lazy">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Matplotlib_icon.svg" alt="Matplotlib" loading="lazy">
+                    <img src="https://cdn.jsdelivr.net/gh/explosion/spaCy/website/src/images/icon.png" alt="spaCy" loading="lazy">
+                    <img src="https://skillicons.dev/icons?i=py" alt="NLTK" loading="lazy">
+                    <img src="https://raw.githubusercontent.com/valohai/ml-logos/master/cuda.svg" alt="cuDNN" loading="lazy">
                 </div>
 
                 <h3>Web3 & Mobile Development</h3>
                 <div class="tech-icons">
-                    <img src="https://skillicons.dev/icons?i=flutter" alt="Flutter">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="Web3.js">
-                    <img src="https://skillicons.dev/icons?i=nodejs" alt="Hardhat">
-                    <img src="https://trufflesuite.com/assets/logo.png" alt="Truffle">
+                    <img src="https://skillicons.dev/icons?i=flutter" alt="Flutter" loading="lazy">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="Web3.js" loading="lazy">
+                    <img src="https://skillicons.dev/icons?i=nodejs" alt="Hardhat" loading="lazy">
+                    <img src="https://trufflesuite.com/assets/logo.png" alt="Truffle" loading="lazy">
                 </div>
 
                 <h3>Databases</h3>
                 <div class="tech-icons">
-                    <img src="https://skillicons.dev/icons?i=postgres" alt="PostgreSQL">
-                    <img src="https://skillicons.dev/icons?i=mongodb" alt="MongoDB">
+                    <img src="https://skillicons.dev/icons?i=postgres" alt="PostgreSQL" loading="lazy">
+                    <img src="https://skillicons.dev/icons?i=mongodb" alt="MongoDB" loading="lazy">
+                    <img src="https://skillicons.dev/icons?i=mysql" alt="MySQL" width="40" height="40" loading="lazy">
+                    <img src="https://cdn.simpleicons.org/mysql/4479A1" alt="MySQL" width="40" height="40" loading="lazy">
                 </div>
 
                 <h3>Software Tools</h3>
-                <div class="tech-icons">
-                    <img src="https://skillicons.dev/icons?i=git" alt="Git">
-                    <img src="https://skillicons.dev/icons?i=github" alt="GitHub">
-                    <img src="https://skillicons.dev/icons?i=idea" alt="IntelliJ">
-                    <img src="https://skillicons.dev/icons?i=pycharm" alt="PyCharm">
-                    <img src="https://skillicons.dev/icons?i=vscode" alt="VS Code">
-                    <img src="https://skillicons.dev/icons?i=androidstudio" alt="Android Studio">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original-wordmark.svg" alt="Jupyter Notebook">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Google_Colaboratory_SVG_Logo.svg/800px-Google_Colaboratory_SVG_Logo.svg.png" alt="Google Colab">
-                    <img src="https://skillicons.dev/icons?i=ai" alt="Adobe Illustrator">
-                    <img src="https://skillicons.dev/icons?i=ps" alt="Adobe Photoshop">
-                    <img src="https://skillicons.dev/icons?i=figma" alt="Figma">
+                <div class="tech-icons software-tools-grid">
+                    <img src="https://skillicons.dev/icons?i=git" alt="Git" loading="lazy">
+                    <img src="https://skillicons.dev/icons?i=github" alt="GitHub" loading="lazy">
+                    <img src="https://skillicons.dev/icons?i=idea" alt="IntelliJ" loading="lazy">
+                    <img src="https://skillicons.dev/icons?i=pycharm" alt="PyCharm" loading="lazy">
+                    <img src="https://skillicons.dev/icons?i=vscode" alt="VS Code" loading="lazy">
+                    <img src="https://skillicons.dev/icons?i=androidstudio" alt="Android Studio" loading="lazy">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original-wordmark.svg" alt="Jupyter Notebook" loading="lazy">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Google_Colaboratory_SVG_Logo.svg/800px-Google_Colaboratory_SVG_Logo.svg.png" alt="Google Colab" loading="lazy">
+                    <img src="https://skillicons.dev/icons?i=ai" alt="Adobe Illustrator" loading="lazy">
+                    <img src="https://skillicons.dev/icons?i=ps" alt="Adobe Photoshop" loading="lazy">
+                    <img src="https://skillicons.dev/icons?i=figma" alt="Figma" loading="lazy">
+                    <img src="https://skillicons.dev/icons?i=docker" alt="Docker" loading="lazy">
+                    <img src="https://cdn.simpleicons.org/blender/ea7600" alt="Blender" width="40" height="40" loading="lazy">
+                    <img src="https://cdn.simpleicons.org/unity/222c37" alt="Unity" width="40" height="40" loading="lazy">
                 </div>
 
                 <h3>Operating System</h3>
                 <div class="tech-icons">
-                    <img src="https://skillicons.dev/icons?i=windows" alt="Windows">
-                    <img src="https://skillicons.dev/icons?i=linux" alt="Linux">
+                    <img src="https://skillicons.dev/icons?i=windows" alt="Windows" loading="lazy">
+                    <img src="https://skillicons.dev/icons?i=linux" alt="Linux" loading="lazy">
                 </div>
             </div>
         </section>
@@ -139,6 +166,8 @@
         </section>
     </main>
 
+    <!-- Remove all floating/circular menu button and menu HTML. Only keep mobile-top-nav. -->
+
     <footer>
         <p>Not just any typical cookie-cutter portfolio!.....© 2024 Kunal Sanga. All rights reserved.</p>
     </footer>
@@ -157,6 +186,57 @@
 
         // Observe all headings
         document.querySelectorAll('h1, h2').forEach((el) => observer.observe(el));
+
+        // Hamburger menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+            hamburger.classList.toggle('open');
+        });
+
+        // Mobile dropdown menu toggle
+        // const menuIcon = document.getElementById('mobileMenuIcon'); // This line is removed
+        // const dropdownMenu = document.getElementById('mobileDropdownMenu'); // This line is removed
+        // if (menuIcon && dropdownMenu) { // This line is removed
+        //     menuIcon.addEventListener('click', () => { // This line is removed
+        //         dropdownMenu.classList.toggle('open'); // This line is removed
+        //     }); // This line is removed
+        //     dropdownMenu.querySelectorAll('a').forEach(link => { // This line is removed
+        //         link.addEventListener('click', () => { // This line is removed
+        //             dropdownMenu.classList.remove('open'); // This line is removed
+        //         }); // This line is removed
+        //     }); // This line is removed
+        // } // This line is removed
+
+        // Floating menu toggle
+        // const fab = document.getElementById('mobileFab'); // This line is removed
+        // const menu = document.getElementById('mobileMenu'); // This line is removed
+        // fab.addEventListener('click', () => { // This line is removed
+        //     menu.classList.toggle('open'); // This line is removed
+        //     fab.classList.toggle('open'); // This line is removed
+        // }); // This line is removed
+        // Optional: close menu when clicking a link // This line is removed
+        // menu.querySelectorAll('a').forEach(link => { // This line is removed
+        //     link.addEventListener('click', () => { // This line is removed
+        //         menu.classList.remove('open'); // This line is removed
+        //         fab.classList.remove('open'); // This line is removed
+        //     }); // This line is removed
+        // }); // This line is removed
+
+        // Simple mobile menu toggle
+        // const simpleMenuBtn = document.getElementById('simpleMobileMenuBtn'); // This line is removed
+        // const simpleMenu = document.getElementById('simpleMobileMenu'); // This line is removed
+        // simpleMenuBtn.addEventListener('click', () => { // This line is removed
+        //     simpleMenu.classList.toggle('open'); // This line is removed
+        //     simpleMenuBtn.classList.toggle('open'); // This line is removed
+        // }); // This line is removed
+        // simpleMenu.querySelectorAll('a').forEach(link => { // This line is removed
+        //     link.addEventListener('click', () => { // This line is removed
+        //         simpleMenu.classList.remove('open'); // This line is removed
+        //         simpleMenuBtn.classList.remove('open'); // This line is removed
+        //     }); // This line is removed
+        // }); // This line is removed
     </script>
 </body>
 </html>

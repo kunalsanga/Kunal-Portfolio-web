@@ -271,22 +271,24 @@
 
         <section id="contact">
             <h2>Let's Connect!</h2>
-            <div class="social-links">
-                <a href="https://linkedin.com/in/kunal-sanga-67323a285" target="_blank" class="social-icon">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://github.com/kunalsanga" target="_blank" class="social-icon">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://twitter.com/your-twitter" target="_blank" class="social-icon">
-                    <i class="fab fa-x-twitter"></i>
-                </a>
-                <a href="https://leetcode.com/u/kunal_sanga_/" target="_blank" class="social-icon">
-                    <i class="fa-solid fa-code"></i>
-                </a>
-                <a href="mailto:kunalsanga197@gmail.com" class="social-icon">
-                    <i class="fa-regular fa-envelope"></i>
-                </a>
+            <div class="dock-container">
+                <div class="dock" id="socialDock">
+                    <a href="https://linkedin.com/in/kunal-sanga-67323a285" target="_blank" class="dock-icon" data-tooltip="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/kunalsanga" target="_blank" class="dock-icon" data-tooltip="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://twitter.com/your-twitter" target="_blank" class="dock-icon" data-tooltip="X (Twitter)">
+                        <i class="fab fa-x-twitter"></i>
+                    </a>
+                    <a href="https://leetcode.com/u/kunal_sanga_/" target="_blank" class="dock-icon" data-tooltip="LeetCode">
+                        <i class="fa-solid fa-code"></i>
+                    </a>
+                    <a href="mailto:kunalsanga197@gmail.com" class="dock-icon" data-tooltip="Email">
+                        <i class="fa-regular fa-envelope"></i>
+                    </a>
+                </div>
             </div>
             <div class="wave-bg"></div>
         </section>
@@ -329,48 +331,48 @@
             });
         });
 
-        // Mobile dropdown menu toggle
-        // const menuIcon = document.getElementById('mobileMenuIcon'); // This line is removed
-        // const dropdownMenu = document.getElementById('mobileDropdownMenu'); // This line is removed
-        // if (menuIcon && dropdownMenu) { // This line is removed
-        //     menuIcon.addEventListener('click', () => { // This line is removed
-        //         dropdownMenu.classList.toggle('open'); // This line is removed
-        //     }); // This line is removed
-        //     dropdownMenu.querySelectorAll('a').forEach(link => { // This line is removed
-        //         link.addEventListener('click', () => { // This line is removed
-        //             dropdownMenu.classList.remove('open'); // This line is removed
-        //         }); // This line is removed
-        //     }); // This line is removed
-        // } // This line is removed
+        // macOS Dock Fisheye Effect
+        const dock = document.getElementById('socialDock');
+        const dockIcons = document.querySelectorAll('.dock-icon');
 
-        // Floating menu toggle
-        // const fab = document.getElementById('mobileFab'); // This line is removed
-        // const menu = document.getElementById('mobileMenu'); // This line is removed
-        // fab.addEventListener('click', () => { // This line is removed
-        //     menu.classList.toggle('open'); // This line is removed
-        //     fab.classList.toggle('open'); // This line is removed
-        // }); // This line is removed
-        // Optional: close menu when clicking a link // This line is removed
-        // menu.querySelectorAll('a').forEach(link => { // This line is removed
-        //     link.addEventListener('click', () => { // This line is removed
-        //         menu.classList.remove('open'); // This line is removed
-        //         fab.classList.remove('open'); // This line is removed
-        //     }); // This line is removed
-        // }); // This line is removed
+        if (dock && dockIcons.length > 0) {
+            dock.addEventListener('mousemove', (e) => {
+                dockIcons.forEach(icon => {
+                    const rect = icon.getBoundingClientRect();
+                    const iconCenterX = rect.left + rect.width / 2;
+                    
+                    const distance = Math.abs(e.clientX - iconCenterX);
+                    const distanceLimit = 100;
+                    
+                    let scale = 1;
+                    let translateY = 0;
+                    
+                    if (distance < distanceLimit) {
+                        const effect = 1 - (distance / distanceLimit);
+                        const easeEffect = Math.sin(effect * Math.PI / 2); // Smooth sine easing
+                        scale = 1 + (0.5 * easeEffect); // Max scale 1.5
+                        translateY = -(scale - 1) * 20; // Offset upwards
+                    }
+                    
+                    icon.style.setProperty('--scale', scale);
+                    icon.style.setProperty('--translateY', `${translateY}px`);
+                });
+            });
 
-        // Simple mobile menu toggle
-        // const simpleMenuBtn = document.getElementById('simpleMobileMenuBtn'); // This line is removed
-        // const simpleMenu = document.getElementById('simpleMobileMenu'); // This line is removed
-        // simpleMenuBtn.addEventListener('click', () => { // This line is removed
-        //     simpleMenu.classList.toggle('open'); // This line is removed
-        //     simpleMenuBtn.classList.toggle('open'); // This line is removed
-        // }); // This line is removed
-        // simpleMenu.querySelectorAll('a').forEach(link => { // This line is removed
-        //     link.addEventListener('click', () => { // This line is removed
-        //         simpleMenu.classList.remove('open'); // This line is removed
-        //         simpleMenuBtn.classList.remove('open'); // This line is removed
-        //     }); // This line is removed
-        // }); // This line is removed
+            dock.addEventListener('mouseleave', () => {
+                dockIcons.forEach(icon => {
+                    icon.style.setProperty('--scale', 1);
+                    icon.style.setProperty('--translateY', '0px');
+                    icon.style.transition = 'transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.2s ease, box-shadow 0.2s ease';
+                });
+            });
+            
+            dock.addEventListener('mouseenter', () => {
+                dockIcons.forEach(icon => {
+                    icon.style.transition = 'transform 0.1s linear, background 0.2s ease, box-shadow 0.2s ease';
+                });
+            });
+        }
     </script>
 </body>
 </html>

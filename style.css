@@ -42,26 +42,6 @@ nav {
     align-items: center;
 }
 
-.nav-logo {
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: #fff;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    margin: 0;
-    padding: 0.2rem 0.5rem;
-    background: transparent !important;
-}
-
-.nav-logo span {
-    color: #a8edea;
-}
-
-.nav-logo:hover {
-    background: transparent !important;
-}
-
 .nav-right {
     display: flex;
     align-items: center;
@@ -117,9 +97,9 @@ nav a:hover, .resume-btn:hover {
 .hamburger {
     display: none;
     margin-left: 0.7rem;
-    background: transparent;
-    border-radius: 8px;
-    box-shadow: none;
+    background: linear-gradient(90deg, #3a8dde 0%, #a8edea 100%);
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(40,40,40,0.18);
     border: none;
     width: 38px;
     height: 38px;
@@ -129,12 +109,13 @@ nav a:hover, .resume-btn:hover {
 }
 .hamburger span {
     display: block;
-    width: 24px;
-    height: 2px;
-    margin: 5px 0;
+    width: 28px;
+    height: 4px;
+    margin: 4px 0;
     background: #fff;
     border-radius: 2px;
     transition: 0.3s;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.12);
 }
 .hamburger.open span:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
@@ -550,19 +531,11 @@ footer {
     nav {
         padding: 0.8rem 1.5rem;
     }
-    .nav-logo {
-        font-size: 1.4rem;
-        padding: 0;
-    }
-    .resume-btn {
-        margin-left: 0.5rem;
-        padding: 0.4rem 0.8rem;
-        font-size: 0.95rem;
-    }
     .hamburger {
         display: flex;
         z-index: 2000;
         cursor: pointer;
+        margin-left: 0;
     }
     .nav-links {
         position: absolute;

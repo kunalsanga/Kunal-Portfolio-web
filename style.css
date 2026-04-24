@@ -515,6 +515,12 @@ footer {
     #about h2 {
         font-size: 2.2rem;
     }
+    #github-stats h2 {
+        font-size: 2.2rem;
+    }
+    #github-stats {
+        padding: 4rem 1rem 2rem;
+    }
     #about p {
         font-size: 1.05rem;
     }
@@ -604,6 +610,12 @@ footer {
     #about h2 {
         font-size: 1.8rem;
     }
+    #github-stats h2 {
+        font-size: 1.8rem;
+    }
+    #github-stats {
+        padding: 3rem 0.5rem 1rem;
+    }
     .skills-container h3 {
         font-size: 1.4rem;
     }
@@ -640,6 +652,45 @@ footer {
 }
 
 /* Languages grid removed — now using unified .tech-icons + .skill-card layout */
+
+#github-stats {
+    padding: 6rem 2rem 4rem;
+}
+
+#github-stats h2 {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(180deg, #fff 0%, #919191 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.stats-container {
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.stats-container:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+.github-stats-img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+}
 
 /* Add these styles to your CSS */
 #contact {

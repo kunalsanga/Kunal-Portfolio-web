@@ -251,60 +251,77 @@ p {
 .tech-icons {
     display: flex;
     justify-content: center;
-    gap: 1.8rem;
+    gap: 1.5rem;
     flex-wrap: wrap;
     margin-bottom: 2rem;
 }
 
 .tech-icons img {
-    width: 75px;
-    height: 75px;
-    transition: transform 0.3s;
+    width: 48px;
+    height: 48px;
     object-fit: contain;
-    padding: 12px;
-    border-radius: 12px;
-    background-color: rgba(40, 40, 40, 0.8);
+    transition: transform 0.3s ease;
+    padding: 0;
+    background: none;
+    border-radius: 0;
 }
 
-.tech-icons img:hover {
-    transform: translateY(-5px);
-    background-color: rgba(50, 50, 50, 0.95);
+/* Skill card layout */
+.skill-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 14px 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 14px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    min-width: 90px;
 }
 
-/* Specific styling for icons that need white background */
-.tech-icons img[alt="Jupyter Notebook"],
-.tech-icons img[alt="Google Colab"],
-.tech-icons img[alt="Truffle"] {
-    background-color: rgba(255, 255, 255, 0.95);
-    padding: 10px;
+.skill-card:hover {
+    transform: translateY(-5px) scale(1.04);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 }
 
-/* Specific styling for Web3.js icon */
-.tech-icons img[alt="Web3.js"] {
-    background-color: rgba(241, 104, 34, 0.95);
-    padding: 8px;
+.skill-card:hover img {
+    transform: scale(1.1);
 }
 
-/* Custom colors for AI/ML tools */
-.tech-icons img[alt="spaCy"] {
-    background-color: rgba(9, 163, 213, 0.95);
-    padding: 8px;
+.skill-card span {
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.65);
+    letter-spacing: 0.02em;
+    text-align: center;
+    white-space: nowrap;
 }
 
-.tech-icons img[alt="NLTK"] {
-    background-color: rgba(40, 40, 40, 0.8);
-    padding: 10px;
+.skill-card:hover span {
+    color: rgba(255, 255, 255, 0.9);
 }
 
-.tech-icons img[alt="cuDNN"] {
-    background-color: rgba(118, 185, 0, 0.95);
-    padding: 8px;
+/* NLTK text-only card (no icon available) */
+.text-only-card {
+    justify-content: center;
 }
 
-/* Custom color for Hardhat */
-.tech-icons img[alt="Hardhat"] {
-    background-color: rgba(253, 182, 13, 0.95);
-    padding: 10px;
+.text-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.85);
+    background: linear-gradient(135deg, rgba(58, 141, 222, 0.3), rgba(168, 237, 234, 0.2));
+    border-radius: 10px;
+    letter-spacing: 0.04em;
 }
 
 .social-links {
@@ -383,20 +400,21 @@ footer {
         font-size: 1.1rem;
     }
     .tech-icons img {
-        width: 44px;
-        height: 44px;
-        padding: 6px;
+        width: 36px;
+        height: 36px;
     }
-    .languages-grid {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: auto;
-        gap: 0.7rem;
-        max-width: 98vw;
+    .skill-card {
+        min-width: 72px;
+        padding: 12px 10px 8px;
+        gap: 6px;
     }
-    .languages-grid img {
-        width: 44px;
-        height: 44px;
-        padding: 6px;
+    .skill-card span {
+        font-size: 0.62rem;
+    }
+    .text-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 0.7rem;
     }
     #about {
         padding: 0 0.5rem;
@@ -469,10 +487,22 @@ footer {
         width: 70px;
         height: 70px;
     }
-    .tech-icons img, .languages-grid img {
-        width: 28px;
-        height: 28px;
-        padding: 2px;
+    .tech-icons img {
+        width: 24px;
+        height: 24px;
+    }
+    .skill-card {
+        min-width: 58px;
+        padding: 8px 6px 6px;
+        gap: 4px;
+    }
+    .skill-card span {
+        font-size: 0.55rem;
+    }
+    .text-icon {
+        width: 24px;
+        height: 24px;
+        font-size: 0.55rem;
     }
     section {
         padding: 0.3rem;
@@ -512,44 +542,7 @@ footer {
     font-size: 0.95rem;
 }
 
-/* Add this new class for languages grid */
-.languages-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 90px);
-    grid-template-rows: repeat(2, 90px);
-    gap: 2.2rem;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto 2rem auto;
-    width: 100%;
-    max-width: 600px;
-    padding: 0 1rem;
-}
-
-.languages-grid img {
-    place-self: center;
-    margin: 0 auto;
-    width: 80px;
-    height: 80px;
-    padding: 12px;
-    background: rgba(40, 40, 40, 0.8);
-}
-
-/* Update mobile view for languages grid */
-@media (max-width: 768px) {
-    .languages-grid {
-        grid-template-columns: repeat(4, 75px);
-        grid-template-rows: repeat(2, 75px);
-        gap: 1.2rem;
-        padding: 0 0.5rem;
-    }
-
-    .languages-grid img {
-        width: 70px;
-        height: 70px;
-        padding: 10px;
-    }
-}
+/* Languages grid removed — now using unified .tech-icons + .skill-card layout */
 
 /* Add these styles to your CSS */
 #contact {
@@ -692,34 +685,4 @@ h1.appear, h2.appear {
 
 
 
-.tech-icons.software-tools-grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 1.5rem;
-    justify-items: center;
-    align-items: center;
-    width: 100%;
-    max-width: 700px;
-    margin: 0 auto 2rem auto;
-}
-
-.tech-icons img, .languages-grid img {
-    width: 44px !important;
-    height: 44px !important;
-    padding: 6px !important;
-    object-fit: contain;
-}
-
-@media (max-width: 600px) {
-    .tech-icons.software-tools-grid {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1.2rem;
-        max-width: 100vw;
-        width: 100%;
-        margin: 0 auto 2rem auto;
-        justify-content: center;
-        align-items: center;
-    }
-}
+/* Software tools grid and !important overrides removed — unified skill-card layout */
